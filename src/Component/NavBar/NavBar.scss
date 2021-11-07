@@ -1,0 +1,30 @@
+header{
+    width: 100%;
+    background-color: rgb(35, 36, 58);
+    color: wheat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+
+    h1{
+        font-size: 1.2em;
+        font-style: italic;
+    }
+
+    nav{
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            li{
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: 20px;
+            }
+        }
+    }
+
+}

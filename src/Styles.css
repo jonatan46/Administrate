@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    background-color: #a6b0c4;
+    color: rgb(53, 26, 26);
+    margin-top: 5px;
+  }
