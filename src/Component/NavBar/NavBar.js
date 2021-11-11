@@ -1,9 +1,10 @@
+import { CartWidget } from '../CartWidget/CartWidget';
 import './NavBar.scss';
 
 export const NavBar = () => {
 
     return (
-        <header classname="header">
+        <header className="header">
 
             <h1>El Jaugar</h1>
 
@@ -15,6 +16,8 @@ export const NavBar = () => {
                     <li>Contacto</li>
                 </ul>
             </nav>
+
+            <CartWidget/>
         </header>
     )
 }

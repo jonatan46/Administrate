@@ -1,17 +1,18 @@
-import './Styles.css';
-import {NavBar} from './NavBar/NavBar.js';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {NavBar} from './Component/NavBar/NavBar';
+import { Principal } from './Component/Principal/Principal';
+import { ItemListContainer } from './Component/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
-    <div>
+    <>
         <NavBar/>
+        
+        <Principal Titulo="Bienvendio a Nuestro Mundo" Mensaje="Esperamos ir mejorando clase a clase"/>
 
-      <section className="App">
-        <p>
-        Learn React
-        </p>
-      </section>
-    </div>
+        <ItemListContainer greeting="Esperamos aprender y mostrar el E-comerces"/>
+    </>
   );
 }
 

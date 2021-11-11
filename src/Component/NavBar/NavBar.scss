@@ -1,4 +1,4 @@
-header{
+.header{
     width: 100%;
     background-color: rgb(35, 36, 58);
     color: wheat;
@@ -8,11 +8,7 @@ header{
     padding: 0 10px;
 
 
-    h1{
-        font-size: 1.2em;
-        font-style: italic;
-    }
-
+   
     nav{
         ul{
             display: flex;
@@ -23,6 +19,7 @@ header{
                 font-weight: 600;
                 text-transform: uppercase;
                 padding: 20px;
+                list-style: none;
             }
         }
     }
