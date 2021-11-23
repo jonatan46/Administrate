@@ -4,6 +4,7 @@ export const stock = [
             price: 2650,
             name: "bujias",
             desc: "valor descuento",
+            catId: "Encendido",
             img: "http://via.placeholder.com/220",
         },
         {
@@ -11,6 +12,7 @@ export const stock = [
             price: 1000,
             name: "cables",
             desc: "valor descuento",
+            catId: "Encendido",
             img: "http://via.placeholder.com/220",
         },
         {
@@ -18,6 +20,7 @@ export const stock = [
             price: 5000,
             name: "bujis",
             desc: "valor descuento",
+            catId: "error",
             img: "http://via.placeholder.com/220",
         },
         {
@@ -25,6 +28,7 @@ export const stock = [
             price: 850,
             name: "orring",
             desc: "valor descuento",
+            catId: "orring",
             img: "http://via.placeholder.com/220",
         },
         {
@@ -32,6 +36,7 @@ export const stock = [
             price: 9850,
             name: "optica",
             desc: "valor descuento",
+            catId: "luces",
             img: "http://via.placeholder.com/220",
         },
         {
@@ -39,6 +44,7 @@ export const stock = [
             price: 2000,
             name: "deposito",
             desc: "valor descuento",
+            catId: "agua",
             img: "http://via.placeholder.com/220",
         },
     ]
