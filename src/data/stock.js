@@ -6,6 +6,7 @@ export const stock = [
             desc: "valor descuento",
             catId: "Encendido",
             img: "http://via.placeholder.com/220",
+            stock: 10
         },
         {
             id:2,
@@ -14,6 +15,7 @@ export const stock = [
             desc: "valor descuento",
             catId: "Encendido",
             img: "http://via.placeholder.com/220",
+            stock: 10
         },
         {
             id:3,
@@ -22,6 +24,7 @@ export const stock = [
             desc: "valor descuento",
             catId: "error",
             img: "http://via.placeholder.com/220",
+            stock: 10
         },
         {
             id:4,
@@ -30,6 +33,7 @@ export const stock = [
             desc: "valor descuento",
             catId: "orring",
             img: "http://via.placeholder.com/220",
+            stock: 10
         },
         {
             id:5,
@@ -38,6 +42,7 @@ export const stock = [
             desc: "valor descuento",
             catId: "luces",
             img: "http://via.placeholder.com/220",
+            stock: 10
         },
         {
             id:6,
@@ -46,5 +51,6 @@ export const stock = [
             desc: "valor descuento",
             catId: "agua",
             img: "http://via.placeholder.com/220",
+            stock: 10
         },
     ]

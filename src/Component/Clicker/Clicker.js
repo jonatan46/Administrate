@@ -1,37 +1,25 @@
 import React, {useState} from 'react'
 import { Button } from 'react-bootstrap'
 
-export const Clicker = () =>  {
-
-    let maxItem=10
-    let minItem=0
-
-    const [clicks, setClicks] = useState(0)
+export const Clicker = ( {max, setCantidad, cantidad, onAdd}) =>  {
 
     const handleClickSumar = () => {
-        if (clicks < maxItem){
-            setClicks( clicks + 1 )
-        }
+        cantidad < max && setCantidad( cantidad + 1 )
     }
 
     const handleClickRestar = () => {
-        if (clicks > minItem){
-            setClicks( clicks - 1 )
-        }
+        cantidad > 0 && setCantidad( cantidad - 1 )
     }
 
     return (
-        <>
-            <section>
-            <div onClick={handleClickSumar}>
-                <Button variant="success">Sumar</Button> 
-            </div>
-            {clicks}
-            <div onClick={handleClickRestar}>
-                <Button variant="danger">Restar</Button> 
-            </div>
-            </section>
-            <h5>Fecha y Hora Ultimo Click: {new Date().toLocaleString()}</h5>
-        </>
+        <div className="my-3">
+            <Button variant="btn btn-outline-primary" onClick={handleClickRestar}>-</Button> 
+            <span className="mx-2">{cantidad}</span>
+            <Button variant="btn btn-primary" onClick={handleClickSumar}>+</Button> 
+            <br/>
+            <button className="btn btn-success my-2" onClick={onAdd}>
+                Agregar al carrito
+            </button>
+        </div>
     )
 }
