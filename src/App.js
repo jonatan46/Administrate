@@ -6,10 +6,12 @@ import { Principal } from './Component/Principal/Principal';
 import { ItemListContainer } from './Component/ItemListContainer/ItemListContainer';
 import { ItemDitailContainer } from './Component/ItemDitailContainer/ItemDitailContainer';
 import { Clicker } from './Component/Clicker/Clicker';
+import { CartProvider } from './Context/CartContext';
+import { AppRoutes } from './routes/AppRoutes';
 
 function App() {
 
-
+  
   const [mostrarClicks, setMostrarClicks] = useState(true)
 
   const handleMostrar = () => {
@@ -17,22 +19,12 @@ function App() {
   }
 
   return (
+    <CartProvider>
       <BrowserRouter>
-        
-        <NavBar/>
-      
-        <Routes>
-          <Route path="/" element={<Principal Titulo="Bienvendio a Nuestro Mundo" Mensaje="Esperamos ir mejorando clase a clase"/>}/>
-          <Route path="/list/:catId" element={<ItemListContainer/>}/>
-          <Route path="/listcomplet" element={<ItemListContainer/>}/>
-          <Route path="/details/:prodId" element={<ItemDitailContainer/>}/>
-          <Route path="/detail" element={<ItemListContainer/>}/>
-          
-        
-        </Routes>
-
+          <NavBar/>
+          <AppRoutes/>
       </BrowserRouter>
-    
+    </CartProvider>    
   );
 }
 

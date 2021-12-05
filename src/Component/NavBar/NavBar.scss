@@ -1,7 +1,6 @@
 .header{
     width: 100%;
-    background-color: rgb(35, 36, 58);
-    color: wheat;
+    background-color: rgb(138, 247, 192);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +17,9 @@
             li{
                 font-weight: 600;
                 text-transform: uppercase;
+                color: blue;
                 padding: 20px;
+                font-style: italic;
                 list-style: none;
             }
         }

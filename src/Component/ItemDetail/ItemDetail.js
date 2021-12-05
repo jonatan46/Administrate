@@ -1,12 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { useNavigate } from 'react-router'
 import { Clicker } from '../Clicker/Clicker'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../Context/CartContext'
 
 export const ItemDetail = ({id, name, img, desc, price, catId, stock}) => {
 
+    const {agregarAlCarrito, isInCart} = useContext(CartContext)
+    
     const navigate = useNavigate()
+
     const [cantidad, setCantidad] = useState(0)
     const [agregado, setAgregado] = useState(false)
 
@@ -20,13 +24,13 @@ export const ItemDetail = ({id, name, img, desc, price, catId, stock}) => {
 
     const handleAgregar = () => {
         if (cantidad > 0) {
-            console.log('Item Agregado:', {
+            agregarAlCarrito({
                 id,
                 name,
                 price,
+                img,
                 cantidad
             })
-            setAgregado(true)
         }
     }
 
@@ -39,13 +43,13 @@ export const ItemDetail = ({id, name, img, desc, price, catId, stock}) => {
                 <p>Precio: ${price}</p>
 
                 {
-                    !agregado
+                    !isInCart(id)
                     ?  <Clicker
                             max={stock}
                             cantidad={cantidad} setCantidad={setCantidad}
                             onAdd={handleAgregar}
                         />
-                    : <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+                    : <Link to="/CartView" className="btn btn-success">Terminar mi compra</Link>
                 }
             </Container>
             <button className="btn btn-primary my-2" onClick={handleVolver}>Volver atras</button>

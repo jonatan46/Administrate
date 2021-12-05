@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useContext, useState,useEffect} from 'react'
 import { useParams } from 'react-router'
 import { Container } from 'react-bootstrap'
 import { pedirDatos } from '../../helpers/pedirDatos'
