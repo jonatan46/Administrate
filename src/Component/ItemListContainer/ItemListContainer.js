@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './ItemListContainer.scss';
-import { collection, getDocs } from 'firebase/firestore/lite'
+import { collection, getDocs, query, where } from 'firebase/firestore/lite'
 import { db } from '../../firebase/config'
 
 export const ItemListContainer = () => {
@@ -20,15 +20,16 @@ export const ItemListContainer = () => {
 
         // 1 - armar la referencia
         const productosRef = collection(db, 'productos')
+
+        const q = catId ? query(productosRef, where('catId', '==', catId) ) : productosRef
         // 2 - traer los datos GET
-        getDocs(productosRef)
+        getDocs(q)
             .then((collection) =>{
                 const items = collection.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data()
                 }))
                 setTablaProductos(items)
-                console.log(items)
             })
             .finally(() =>  {
                 setLoading(false)
