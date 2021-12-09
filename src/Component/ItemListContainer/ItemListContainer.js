@@ -1,9 +1,10 @@
 import React, {useContext, useState,useEffect} from 'react'
 import { useParams } from 'react-router'
 import { Container } from 'react-bootstrap'
-import { pedirDatos } from '../../helpers/pedirDatos'
 import { Link } from 'react-router-dom'
 import './ItemListContainer.scss';
+import { collection, getDocs } from 'firebase/firestore/lite'
+import { db } from '../../firebase/config'
 
 export const ItemListContainer = () => {
 
@@ -16,20 +17,20 @@ export const ItemListContainer = () => {
     useEffect(() => {
         
         setLoading(true)
-        pedirDatos()
-            .then( (resp) => {
 
-                if (!catId) {
-                    setTablaProductos(resp)
-                } else {
-                    setTablaProductos( resp.filter ( resp => resp.catId === catId))
-                }
-
+        // 1 - armar la referencia
+        const productosRef = collection(db, 'productos')
+        // 2 - traer los datos GET
+        getDocs(productosRef)
+            .then((collection) =>{
+                const items = collection.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                setTablaProductos(items)
+                console.log(items)
             })
-            .catch( (error) => {
-                console.log(error)
-            })
-            .finally(() => {
+            .finally(() =>  {
                 setLoading(false)
             })
 
